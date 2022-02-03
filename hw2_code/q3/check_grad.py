@@ -34,7 +34,6 @@ def check_grad(func, X, epsilon, *args):
         dx = -dx
         y1 = func(X+dx, *args)[0][0]
         dh[j] = (y2-y1) / (2 * epsilon)
-    dh = dh.T
     # Print the two vectors
     print(np.hstack((dy, dh)))
     # Return norm of diff divided by norm of sum
