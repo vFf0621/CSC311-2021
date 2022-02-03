@@ -102,4 +102,4 @@ def logistic(weights, data, targets, hyperparameters):
     #####################################################################
     #                       END OF YOUR CODE                            #
     #####################################################################
-    return f, df, y
+    return f, df.T, y
