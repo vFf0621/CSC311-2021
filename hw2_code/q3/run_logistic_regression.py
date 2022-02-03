@@ -42,7 +42,7 @@ def run_logistic_regression():
         f, df, y = logistic(weights, train_inputs, train_targets, 
                             hyperparameters)    
         # w -= a * dw
-        weights -= df.T * hyperparameters["learning_rate"]
+        weights -= df * hyperparameters["learning_rate"]
         
         plt.plot(t, f[0], "ro")
         plt.plot(t, f[1], "go")
