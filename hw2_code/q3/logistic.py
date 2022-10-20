@@ -49,7 +49,7 @@ def evaluate(targets, y):
     # correctly.                                                        #
     #####################################################################
     # Sigmoid Activation
-    z = 1/(1+np.exp(-y))
+    z = sigmoid(y)
     ce = -np.sum(np.dot(targets.T, np.log(z))+
                  np.dot((1-targets).T,np.log(1-z))) / z.shape[0]
     
@@ -91,7 +91,7 @@ def logistic(weights, data, targets, hyperparameters):
     # logistic regression.                                              #
     #####################################################################
     f = evaluate(targets, y)
-    df = np.dot((y - targets).T, data)/data.shape[1]
+    df = (sigmoid(y))*(1-sigmoid(y))*np.dot((y - targets).T, data)/data.shape[1]
     db = (np.sum(y-targets))/data.shape[1]
     df = list(df)
     df[0] = list(df[0])
